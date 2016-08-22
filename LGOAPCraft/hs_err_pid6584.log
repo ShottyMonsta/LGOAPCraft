@@ -1,0 +1,255 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x63f8538b, pid=6584, tid=5432
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_77-b03) (build 1.8.0_77-b03)
+# Java VM: Java HotSpot(TM) Client VM (25.77-b03 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xd538b]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00d7d400):  JavaThread "main" [_thread_in_vm, id=5432, stack(0x00330000,0x00380000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x00d7d400, ECX=0x00000000, EDX=0x00000001
+ESP=0x0037df3c, EBP=0x0037df58, ESI=0x00d7d540, EDI=0x00000000
+EIP=0x63f8538b, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0037df3c)
+0x0037df3c:   00000000 00d7d540 664c0278 00d7d400
+0x0037df4c:   00000000 00d7d400 00d7d540 0037dfa8
+0x0037df5c:   6634c8d5 00d7d540 00000000 00d70079
+0x0037df6c:   00d7d540 664c0278 6634c8a7 00000001
+0x0037df7c:   0000000f ffff0049 0037dfa8 6634c883
+0x0037df8c:   00d7d540 00000001 0000000f 00d7d400
+0x0037df9c:   14a46b50 14a46b50 00d7d540 0037dfec
+0x0037dfac:   0273c0c3 00d7d540 0037e00c 17b507c8 
+
+Instructions: (pc=0x63f8538b)
+0x63f8536b:   f3 ff 83 c4 08 83 7b 04 00 89 5d f0 c7 45 f4 00
+0x63f8537b:   00 00 00 74 08 8d 4d f0 e8 c8 09 0d 00 8b 45 0c
+0x63f8538b:   8b 08 8b 51 04 8b 42 38 50 56 e8 36 4b 08 00 83
+0x63f8539b:   c4 08 83 7d f4 00 89 45 08 74 08 8d 4d f0 e8 e2 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x00d7d400 is a thread
+ECX=0x00000000 is an unknown value
+EDX=0x00000001 is an unknown value
+ESP=0x0037df3c is pointing into the stack for thread: 0x00d7d400
+EBP=0x0037df58 is pointing into the stack for thread: 0x00d7d400
+ESI=0x00d7d540 is an unknown value
+EDI=0x00000000 is an unknown value
+
+
+Stack: [0x00330000,0x00380000],  sp=0x0037df3c,  free space=311k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xd538b]
+C  [bwapi_bridge2_4.dll+0x7c8d5]
+j  bwapi.Unit.build_native(JLbwapi/UnitType;Lbwapi/TilePosition;)Z+0
+j  bwapi.Unit.build(Lbwapi/UnitType;Lbwapi/TilePosition;)Z+7
+j  Orders.BuildOrder.update()V+108
+J 61 C1 GameModel.Worker.update(LCraftPlanner/CraftPlannerBlackboard;)V (445 bytes) @ 0x027e9918 [0x027e93b0+0x568]
+J 69 C1 Actuators.WorkerActuator.update()V (54 bytes) @ 0x027ebf78 [0x027ebed0+0xa8]
+J 115 C1 CraftPlanner.CraftPlanner.update()V (77 bytes) @ 0x027f63e8 [0x027f6380+0x68]
+J 106 C1 Managers.GameManager.onFrame()V (56 bytes) @ 0x027f5470 [0x027f5250+0x220]
+J 105 C1 bwapi.AIModule.onFrame()V (17 bytes) @ 0x027f5004 [0x027f4fd0+0x34]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158f95]
+V  [jvm.dll+0x21e54e]
+V  [jvm.dll+0x15902e]
+V  [jvm.dll+0xdb23b]
+V  [jvm.dll+0xde1cc]
+C  [bwapi_bridge2_4.dll+0x40e6d]
+C  [bwapi_bridge2_4.dll+0x699d0]
+j  bwapi.Mirror.startGame()V+0
+j  Managers.GameManager.<init>()V+30
+j  Managers.GameManager.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158f95]
+V  [jvm.dll+0x21e54e]
+V  [jvm.dll+0x15902e]
+V  [jvm.dll+0xdb007]
+V  [jvm.dll+0xe359f]
+C  [javaw.exe+0x229a]
+C  [javaw.exe+0xaebf]
+C  [javaw.exe+0xaf49]
+C  [kernel32.dll+0x1338a]
+C  [ntdll.dll+0x39902]
+C  [ntdll.dll+0x398d5]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  bwapi.Unit.build_native(JLbwapi/UnitType;Lbwapi/TilePosition;)Z+0
+j  bwapi.Unit.build(Lbwapi/UnitType;Lbwapi/TilePosition;)Z+7
+j  Orders.BuildOrder.update()V+108
+J 61 C1 GameModel.Worker.update(LCraftPlanner/CraftPlannerBlackboard;)V (445 bytes) @ 0x027e9918 [0x027e93b0+0x568]
+J 69 C1 Actuators.WorkerActuator.update()V (54 bytes) @ 0x027ebf78 [0x027ebed0+0xa8]
+J 115 C1 CraftPlanner.CraftPlanner.update()V (77 bytes) @ 0x027f63e8 [0x027f6380+0x68]
+J 106 C1 Managers.GameManager.onFrame()V (56 bytes) @ 0x027f5470 [0x027f5250+0x220]
+J 105 C1 bwapi.AIModule.onFrame()V (17 bytes) @ 0x027f5004 [0x027f4fd0+0x34]
+v  ~StubRoutines::call_stub
+j  bwapi.Mirror.startGame()V+0
+j  Managers.GameManager.<init>()V+30
+j  Managers.GameManager.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x14eb4400 JavaThread "Service Thread" daemon [_thread_blocked, id=5696, stack(0x15360000,0x153b0000)]
+  0x14ebbc00 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=1796, stack(0x00d10000,0x00d60000)]
+  0x14eba400 JavaThread "Attach Listener" daemon [_thread_blocked, id=5296, stack(0x151f0000,0x15240000)]
+  0x14eb9400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2668, stack(0x15090000,0x150e0000)]
+  0x00e73c00 JavaThread "Finalizer" daemon [_thread_blocked, id=5728, stack(0x14d10000,0x14d60000)]
+  0x00e6dc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=4348, stack(0x047b0000,0x04800000)]
+=>0x00d7d400 JavaThread "main" [_thread_in_vm, id=5432, stack(0x00330000,0x00380000)]
+
+Other Threads:
+  0x00e67000 VMThread [stack: 0x14c90000,0x14ce0000] [id=2800]
+  0x14eb5000 WatcherThread [stack: 0x15300000,0x15350000] [id=732]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 4143K [0x04800000, 0x04d50000, 0x09d50000)
+  eden space 4416K,  93% used [0x04800000, 0x04c0be80, 0x04c50000)
+  from space 512K,   0% used [0x04c50000, 0x04c50000, 0x04cd0000)
+  to   space 512K,   0% used [0x04cd0000, 0x04cd0000, 0x04d50000)
+ tenured generation   total 10944K, used 0K [0x09d50000, 0x0a800000, 0x14800000)
+   the space 10944K,   0% used [0x09d50000, 0x09d50000, 0x09d50200, 0x0a800000)
+ Metaspace       used 2228K, capacity 2696K, committed 2752K, reserved 4480K
+
+Card table byte_map: [0x01150000,0x011e0000] byte_map_base: 0x0112c000
+
+Polling page: 0x001d0000
+
+CodeCache: size=32768Kb used=868Kb max_used=868Kb free=31899Kb
+ bounds [0x02730000, 0x02810000, 0x04730000]
+ total_blobs=289 nmethods=144 adapters=76
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 10.934 Thread 0x14ebbc00  138             bwapi.AbstractPoint::<init> (5 bytes)
+Event: 10.934 Thread 0x14ebbc00 nmethod 138 0x028083c8 code [0x028084c0, 0x02808540]
+Event: 10.934 Thread 0x14ebbc00  139             bwapi.TilePosition::<init> (15 bytes)
+Event: 10.934 Thread 0x14ebbc00 nmethod 139 0x02808588 code [0x02808680, 0x02808700]
+Event: 10.934 Thread 0x14ebbc00  140             bwapi.Game::mapHeight (9 bytes)
+Event: 10.934 Thread 0x14ebbc00 nmethod 140 0x02808cc8 code [0x02808dc0, 0x02808e5c]
+Event: 10.934 Thread 0x14ebbc00  142             GameModel.Base::canBuildHere (27 bytes)
+Event: 10.934 Thread 0x14ebbc00 nmethod 142 0x02808ec8 code [0x02808fe0, 0x028090f8]
+Event: 10.934 Thread 0x14ebbc00  143             bwapi.Game::canBuildHere (12 bytes)
+Event: 10.934 Thread 0x14ebbc00 nmethod 143 0x028091c8 code [0x028092c0, 0x0280936c]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 10.638 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b51c58) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.639 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b52178) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.639 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b52698) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.640 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b52bb8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.640 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b530d8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.641 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b535f8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.641 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b53b18) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.642 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b54038) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.642 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b54558) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+Event: 10.643 Thread 0x00d7d400 Exception <a 'java/lang/NullPointerException'> (0x04b54a78) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\interpreter\linkResolver.cpp, line 1178]
+
+Events (10 events):
+Event: 7.239 loading class Orders/BuildOrderStatus
+Event: 7.239 loading class Orders/BuildOrderStatus done
+Event: 7.241 loading class GameModel/Worker
+Event: 7.241 loading class GameModel/Worker done
+Event: 7.241 loading class GameModel/WorkerStatus
+Event: 7.241 loading class GameModel/WorkerStatus done
+Event: 7.241 loading class GameModel/Building
+Event: 7.241 loading class GameModel/Building done
+Event: 7.242 loading class GameModel/BuildingStatus
+Event: 7.242 loading class GameModel/BuildingStatus done
+
+
+Dynamic libraries:
+0x012f0000 - 0x01323000 	C:\Program Files (x86)\Java\jdk1.8.0_77\bin\javaw.exe
+0x77a80000 - 0x77c00000 	C:\Windows\SysWOW64\ntdll.dll
+0x76630000 - 0x76740000 	C:\Windows\syswow64\kernel32.dll
+0x76770000 - 0x767b7000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76010000 - 0x760b1000 	C:\Windows\syswow64\ADVAPI32.dll
+0x756a0000 - 0x7574c000 	C:\Windows\syswow64\msvcrt.dll
+0x75670000 - 0x75689000 	C:\Windows\SysWOW64\sechost.dll
+0x76540000 - 0x76630000 	C:\Windows\syswow64\RPCRT4.dll
+0x753d0000 - 0x75430000 	C:\Windows\syswow64\SspiCli.dll
+0x753c0000 - 0x753cc000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x76440000 - 0x76540000 	C:\Windows\syswow64\USER32.dll
+0x767e0000 - 0x76870000 	C:\Windows\syswow64\GDI32.dll
+0x760c0000 - 0x760ca000 	C:\Windows\syswow64\LPK.dll
+0x76180000 - 0x7621d000 	C:\Windows\syswow64\USP10.dll
+0x6ffc0000 - 0x7015e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\COMCTL32.dll
+0x76220000 - 0x76277000 	C:\Windows\syswow64\SHLWAPI.dll
+0x760e0000 - 0x76140000 	C:\Windows\system32\IMM32.DLL
+0x75750000 - 0x7581c000 	C:\Windows\syswow64\MSCTF.dll
+0x6dc80000 - 0x6dd3f000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\msvcr100.dll
+0x63eb0000 - 0x64278000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\client\jvm.dll
+0x743b0000 - 0x743b7000 	C:\Windows\system32\WSOCK32.dll
+0x76880000 - 0x768b5000 	C:\Windows\syswow64\WS2_32.dll
+0x767d0000 - 0x767d6000 	C:\Windows\syswow64\NSI.dll
+0x744c0000 - 0x744f2000 	C:\Windows\system32\WINMM.dll
+0x752f0000 - 0x752f9000 	C:\Windows\system32\VERSION.dll
+0x769a0000 - 0x769a5000 	C:\Windows\syswow64\PSAPI.DLL
+0x70630000 - 0x7063c000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\verify.dll
+0x6f9b0000 - 0x6f9d1000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\java.dll
+0x6f630000 - 0x6f643000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\zip.dll
+0x769b0000 - 0x775fb000 	C:\Windows\syswow64\SHELL32.dll
+0x75ea0000 - 0x75ffd000 	C:\Windows\syswow64\ole32.dll
+0x76170000 - 0x7617b000 	C:\Windows\syswow64\profapi.dll
+0x662d0000 - 0x66539000 	G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\bwapi_bridge2_4.dll
+0x6dd80000 - 0x6ddf1000 	C:\Windows\system32\MSVCP120.dll
+0x660c0000 - 0x661ae000 	C:\Windows\system32\MSVCR120.dll
+0x6acc0000 - 0x6ad27000 	G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\libgmp-10.dll
+0x6f540000 - 0x6f59e000 	G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\libmpfr-4.dll
+0x661e0000 - 0x662cb000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: Managers.GameManager
+java_class_path (initial): G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\bin;G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAP\bin;G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\lib\bwmirror_v2_4.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre1.8.0_77/bin/server;C:/Program Files/Java/jre1.8.0_77/bin;C:/Program Files/Java/jre1.8.0_77/lib/amd64;C:\ProgramData\Oracle\Java\javapath;G:\Sony\usr\local\cell\host-win32\spu\bin;G:\Sony\usr\local\cell\host-win32\ppu\bin;G:\Sony\usr\local\cell\host-win32\bin;G:\Sony\usr\local\cell\host-win32\Cg\bin;C:\Program Files (x86)\SN Systems\Common\VSI\bin;C:\Program Files (x86)\SN Systems\PS3\bin;G:\Sony\usr\local\cell\host-win32\sn\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files (x86)\Microsoft Application Virtualization Client;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;G:\Thomas Cook Thesis\eclipse;
+USERNAME=cmzero1
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.23392)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16686628k(12625076k free), swap 33371400k(27954264k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.77-b03) for windows-x86 JRE (1.8.0_77-b03), built on Mar 20 2016 22:00:03 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Wed Apr 20 13:14:20 2016
+elapsed time: 10 seconds (0d 0h 0m 10s)
+

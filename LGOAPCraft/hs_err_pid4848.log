@@ -1,0 +1,292 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x6476538b, pid=4848, tid=6444
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_77-b03) (build 1.8.0_77-b03)
+# Java VM: Java HotSpot(TM) Client VM (25.77-b03 mixed mode windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xd538b]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0015d400):  JavaThread "main" [_thread_in_vm, id=6444, stack(0x00eb0000,0x00f00000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x0015d400, ECX=0x00000000, EDX=0x00000007
+ESP=0x00efd8f4, EBP=0x00efd910, ESI=0x0015d540, EDI=0x0015d540
+EIP=0x6476538b, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x00efd8f4)
+0x00efd8f4:   0015d540 14a46910 14a46910 0015d400
+0x00efd904:   00000000 0015d400 14a46910 00efd958
+0x00efd914:   65bdc617 0015d540 00000000 6e696f70
+0x00efd924:   00726574 14a46910 65bdc5e7 00000007
+0x00efd934:   0000000f 0015004a 14a46910 14a46910
+0x00efd944:   14a46910 00000001 0000000f 0015d400
+0x00efd954:   0015d540 00efd9a0 0266c0c3 0015d540
+0x00efd964:   00efd9bc 17ca3b30 00000000 00000000 
+
+Instructions: (pc=0x6476538b)
+0x6476536b:   f3 ff 83 c4 08 83 7b 04 00 89 5d f0 c7 45 f4 00
+0x6476537b:   00 00 00 74 08 8d 4d f0 e8 c8 09 0d 00 8b 45 0c
+0x6476538b:   8b 08 8b 51 04 8b 42 38 50 56 e8 36 4b 08 00 83
+0x6476539b:   c4 08 83 7d f4 00 89 45 08 74 08 8d 4d f0 e8 e2 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x0015d400 is a thread
+ECX=0x00000000 is an unknown value
+EDX=0x00000007 is an unknown value
+ESP=0x00efd8f4 is pointing into the stack for thread: 0x0015d400
+EBP=0x00efd910 is pointing into the stack for thread: 0x0015d400
+ESI=0x0015d540 is an unknown value
+EDI=0x0015d540 is an unknown value
+
+
+Stack: [0x00eb0000,0x00f00000],  sp=0x00efd8f4,  free space=310k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xd538b]
+C  [bwapi_bridge2_4.dll+0x7c617]
+j  bwapi.Unit.attack_native(JLbwapi/Unit;)Z+0
+j  bwapi.Unit.attack(Lbwapi/Unit;)Z+6
+j  GameModel.CombatUnit.update()V+56
+j  GameModel.Squad.update(LCraftPlanner/CraftPlannerBlackboard;)V+24
+J 128 C1 Actuators.SquadActuator.update()V (41 bytes) @ 0x0273562c [0x02735580+0xac]
+J 123 C1 CraftPlanner.CraftPlanner.update()V (81 bytes) @ 0x027263d8 [0x02726350+0x88]
+J 143 C1 Managers.GameManager.onFrame()V (56 bytes) @ 0x02738a30 [0x02738810+0x220]
+J 114 C1 bwapi.AIModule.onFrame()V (17 bytes) @ 0x02725904 [0x027258d0+0x34]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158f95]
+V  [jvm.dll+0x21e54e]
+V  [jvm.dll+0x15902e]
+V  [jvm.dll+0xdb23b]
+V  [jvm.dll+0xde1cc]
+C  [bwapi_bridge2_4.dll+0x40e6d]
+C  [bwapi_bridge2_4.dll+0x699d0]
+j  bwapi.Mirror.startGame()V+0
+j  Managers.GameManager.<init>()V+30
+j  Managers.GameManager.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x158f95]
+V  [jvm.dll+0x21e54e]
+V  [jvm.dll+0x15902e]
+V  [jvm.dll+0xdb007]
+V  [jvm.dll+0xe359f]
+C  [javaw.exe+0x229a]
+C  [javaw.exe+0xaebf]
+C  [javaw.exe+0xaf49]
+C  [kernel32.dll+0x1338a]
+C  [ntdll.dll+0x39902]
+C  [ntdll.dll+0x398d5]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  bwapi.Unit.attack_native(JLbwapi/Unit;)Z+0
+j  bwapi.Unit.attack(Lbwapi/Unit;)Z+6
+j  GameModel.CombatUnit.update()V+56
+j  GameModel.Squad.update(LCraftPlanner/CraftPlannerBlackboard;)V+24
+J 128 C1 Actuators.SquadActuator.update()V (41 bytes) @ 0x0273562c [0x02735580+0xac]
+J 123 C1 CraftPlanner.CraftPlanner.update()V (81 bytes) @ 0x027263d8 [0x02726350+0x88]
+J 143 C1 Managers.GameManager.onFrame()V (56 bytes) @ 0x02738a30 [0x02738810+0x220]
+J 114 C1 bwapi.AIModule.onFrame()V (17 bytes) @ 0x02725904 [0x027258d0+0x34]
+v  ~StubRoutines::call_stub
+j  bwapi.Mirror.startGame()V+0
+j  Managers.GameManager.<init>()V+30
+j  Managers.GameManager.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x14eb4400 JavaThread "Service Thread" daemon [_thread_blocked, id=6896, stack(0x152f0000,0x15340000)]
+  0x14ead400 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=1260, stack(0x153f0000,0x15440000)]
+  0x14eba800 JavaThread "Attach Listener" daemon [_thread_blocked, id=5460, stack(0x14cf0000,0x14d40000)]
+  0x14eb9400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2900, stack(0x15240000,0x15290000)]
+  0x00a23c00 JavaThread "Finalizer" daemon [_thread_blocked, id=1504, stack(0x15070000,0x150c0000)]
+  0x00a1dc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=4304, stack(0x14dd0000,0x14e20000)]
+=>0x0015d400 JavaThread "main" [_thread_in_vm, id=6444, stack(0x00eb0000,0x00f00000)]
+
+Other Threads:
+  0x00a17000 VMThread [stack: 0x04760000,0x047b0000] [id=1436]
+  0x14eb5000 WatcherThread [stack: 0x00ab0000,0x00b00000] [id=2548]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 1726K [0x04800000, 0x04d50000, 0x09d50000)
+  eden space 4416K,  39% used [0x04800000, 0x049aea08, 0x04c50000)
+  from space 512K,   0% used [0x04c50000, 0x04c511b0, 0x04cd0000)
+  to   space 512K,   0% used [0x04cd0000, 0x04cd0000, 0x04d50000)
+ tenured generation   total 10944K, used 508K [0x09d50000, 0x0a800000, 0x14800000)
+   the space 10944K,   4% used [0x09d50000, 0x09dcf1d0, 0x09dcf200, 0x0a800000)
+ Metaspace       used 2258K, capacity 2728K, committed 2752K, reserved 4480K
+
+Card table byte_map: [0x00e10000,0x00ea0000] byte_map_base: 0x00dec000
+
+Polling page: 0x00140000
+
+CodeCache: size=32768Kb used=892Kb max_used=892Kb free=31875Kb
+ bounds [0x02660000, 0x02740000, 0x04660000]
+ total_blobs=297 nmethods=152 adapters=76
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 38.735 Thread 0x14ead400  146   !         Orders.BuildOrder::$SWITCH_TABLE$Orders$BuildOrderStatus (74 bytes)
+Event: 38.735 Thread 0x14ead400 nmethod 146 0x0273a1c8 code [0x0273a300, 0x0273a67c]
+Event: 59.233 Thread 0x14ead400  149             Actuators.BuildingActuator::getRequiredWorkers (60 bytes)
+Event: 59.233 Thread 0x14ead400 nmethod 149 0x0273afc8 code [0x0273b100, 0x0273b270]
+Event: 60.620 Thread 0x14ead400  150             sun.nio.cs.SingleByte$Encoder::encodeArrayLoop (236 bytes)
+Event: 60.621 Thread 0x14ead400 nmethod 150 0x0273b408 code [0x0273b720, 0x0273c21c]
+Event: 62.212 Thread 0x14ead400  151             GameModel.Building::update (231 bytes)
+Event: 62.213 Thread 0x14ead400 nmethod 151 0x0273d808 code [0x0273da50, 0x0273e300]
+Event: 62.227 Thread 0x14ead400  152   !         GameModel.Building::$SWITCH_TABLE$GameModel$BuildingStatus (61 bytes)
+Event: 62.227 Thread 0x14ead400 nmethod 152 0x0273ec48 code [0x0273ed70, 0x0273f08c]
+
+GC Heap History (4 events):
+Event: 30.732 GC heap before
+{Heap before GC invocations=0 (full 0):
+ def new generation   total 4928K, used 4416K [0x04800000, 0x04d50000, 0x09d50000)
+  eden space 4416K, 100% used [0x04800000, 0x04c50000, 0x04c50000)
+  from space 512K,   0% used [0x04c50000, 0x04c50000, 0x04cd0000)
+  to   space 512K,   0% used [0x04cd0000, 0x04cd0000, 0x04d50000)
+ tenured generation   total 10944K, used 0K [0x09d50000, 0x0a800000, 0x14800000)
+   the space 10944K,   0% used [0x09d50000, 0x09d50000, 0x09d50200, 0x0a800000)
+ Metaspace       used 2244K, capacity 2728K, committed 2752K, reserved 4480K
+Event: 30.733 GC heap after
+Heap after GC invocations=1 (full 0):
+ def new generation   total 4928K, used 512K [0x04800000, 0x04d50000, 0x09d50000)
+  eden space 4416K,   0% used [0x04800000, 0x04800000, 0x04c50000)
+  from space 512K, 100% used [0x04cd0000, 0x04d50000, 0x04d50000)
+  to   space 512K,   0% used [0x04c50000, 0x04c50000, 0x04cd0000)
+ tenured generation   total 10944K, used 90K [0x09d50000, 0x0a800000, 0x14800000)
+   the space 10944K,   0% used [0x09d50000, 0x09d66a98, 0x09d66c00, 0x0a800000)
+ Metaspace       used 2244K, capacity 2728K, committed 2752K, reserved 4480K
+}
+Event: 56.206 GC heap before
+{Heap before GC invocations=1 (full 0):
+ def new generation   total 4928K, used 4928K [0x04800000, 0x04d50000, 0x09d50000)
+  eden space 4416K, 100% used [0x04800000, 0x04c50000, 0x04c50000)
+  from space 512K, 100% used [0x04cd0000, 0x04d50000, 0x04d50000)
+  to   space 512K,   0% used [0x04c50000, 0x04c50000, 0x04cd0000)
+ tenured generation   total 10944K, used 90K [0x09d50000, 0x0a800000, 0x14800000)
+   the space 10944K,   0% used [0x09d50000, 0x09d66a98, 0x09d66c00, 0x0a800000)
+ Metaspace       used 2245K, capacity 2728K, committed 2752K, reserved 4480K
+Event: 56.207 GC heap after
+Heap after GC invocations=2 (full 0):
+ def new generation   total 4928K, used 4K [0x04800000, 0x04d50000, 0x09d50000)
+  eden space 4416K,   0% used [0x04800000, 0x04800000, 0x04c50000)
+  from space 512K,   0% used [0x04c50000, 0x04c511b0, 0x04cd0000)
+  to   space 512K,   0% used [0x04cd0000, 0x04cd0000, 0x04d50000)
+ tenured generation   total 10944K, used 508K [0x09d50000, 0x0a800000, 0x14800000)
+   the space 10944K,   4% used [0x09d50000, 0x09dcf1d0, 0x09dcf200, 0x0a800000)
+ Metaspace       used 2245K, capacity 2728K, committed 2752K, reserved 4480K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 53.289 Thread 0x0015d400 Implicit null exception at 0x02739544 to 0x0273983b
+Event: 53.289 Thread 0x0015d400 Exception <a 'java/lang/NullPointerException'> (0x04bc6fd8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 53.304 Thread 0x0015d400 Implicit null exception at 0x02739544 to 0x0273983b
+Event: 53.304 Thread 0x0015d400 Exception <a 'java/lang/NullPointerException'> (0x04bc74f8) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 53.305 Thread 0x0015d400 Implicit null exception at 0x02739544 to 0x0273983b
+Event: 53.305 Thread 0x0015d400 Exception <a 'java/lang/NullPointerException'> (0x04bc7a18) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 53.320 Thread 0x0015d400 Implicit null exception at 0x02739544 to 0x0273983b
+Event: 53.320 Thread 0x0015d400 Exception <a 'java/lang/NullPointerException'> (0x04bc7f38) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+Event: 53.321 Thread 0x0015d400 Implicit null exception at 0x02739544 to 0x0273983b
+Event: 53.321 Thread 0x0015d400 Exception <a 'java/lang/NullPointerException'> (0x04bc8458) thrown at [C:\workspace\8-2-build-windows-i586-cygwin\jdk8u77\6540\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 605]
+
+Events (10 events):
+Event: 60.606 loading class Orders/TrainingOrderStatus
+Event: 60.606 loading class Orders/TrainingOrderStatus done
+Event: 63.912 loading class GameModel/Squad
+Event: 63.912 loading class GameModel/Squad done
+Event: 63.912 loading class GameModel/CombatUnit
+Event: 63.912 loading class GameModel/CombatUnit done
+Event: 63.913 loading class GameModel/CombatUnitStatus
+Event: 63.913 loading class GameModel/CombatUnitStatus done
+Event: 63.913 loading class GameModel/SquadStatus
+Event: 63.913 loading class GameModel/SquadStatus done
+
+
+Dynamic libraries:
+0x00f50000 - 0x00f83000 	C:\Program Files (x86)\Java\jdk1.8.0_77\bin\javaw.exe
+0x77a80000 - 0x77c00000 	C:\Windows\SysWOW64\ntdll.dll
+0x76630000 - 0x76740000 	C:\Windows\syswow64\kernel32.dll
+0x76770000 - 0x767b7000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76010000 - 0x760b1000 	C:\Windows\syswow64\ADVAPI32.dll
+0x756a0000 - 0x7574c000 	C:\Windows\syswow64\msvcrt.dll
+0x75670000 - 0x75689000 	C:\Windows\SysWOW64\sechost.dll
+0x76540000 - 0x76630000 	C:\Windows\syswow64\RPCRT4.dll
+0x753d0000 - 0x75430000 	C:\Windows\syswow64\SspiCli.dll
+0x753c0000 - 0x753cc000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x76440000 - 0x76540000 	C:\Windows\syswow64\USER32.dll
+0x767e0000 - 0x76870000 	C:\Windows\syswow64\GDI32.dll
+0x760c0000 - 0x760ca000 	C:\Windows\syswow64\LPK.dll
+0x76180000 - 0x7621d000 	C:\Windows\syswow64\USP10.dll
+0x6f5d0000 - 0x6f76e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\COMCTL32.dll
+0x76220000 - 0x76277000 	C:\Windows\syswow64\SHLWAPI.dll
+0x760e0000 - 0x76140000 	C:\Windows\system32\IMM32.DLL
+0x75750000 - 0x7581c000 	C:\Windows\syswow64\MSCTF.dll
+0x65dd0000 - 0x65e8f000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\msvcr100.dll
+0x64690000 - 0x64a58000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\client\jvm.dll
+0x743b0000 - 0x743b7000 	C:\Windows\system32\WSOCK32.dll
+0x76880000 - 0x768b5000 	C:\Windows\syswow64\WS2_32.dll
+0x767d0000 - 0x767d6000 	C:\Windows\syswow64\NSI.dll
+0x744c0000 - 0x744f2000 	C:\Windows\system32\WINMM.dll
+0x752f0000 - 0x752f9000 	C:\Windows\system32\VERSION.dll
+0x769a0000 - 0x769a5000 	C:\Windows\syswow64\PSAPI.DLL
+0x70920000 - 0x7092c000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\verify.dll
+0x6fa00000 - 0x6fa21000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\java.dll
+0x70160000 - 0x70173000 	C:\Program Files (x86)\Java\jdk1.8.0_77\jre\bin\zip.dll
+0x769b0000 - 0x775fb000 	C:\Windows\syswow64\SHELL32.dll
+0x75ea0000 - 0x75ffd000 	C:\Windows\syswow64\ole32.dll
+0x76170000 - 0x7617b000 	C:\Windows\syswow64\profapi.dll
+0x65b60000 - 0x65dc9000 	G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\bwapi_bridge2_4.dll
+0x70930000 - 0x709a1000 	C:\Windows\system32\MSVCP120.dll
+0x6f040000 - 0x6f12e000 	C:\Windows\system32\MSVCR120.dll
+0x6acc0000 - 0x6ad27000 	G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\libgmp-10.dll
+0x6f540000 - 0x6f59e000 	G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\libmpfr-4.dll
+0x632a0000 - 0x6338b000 	C:\Windows\system32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: Managers.GameManager
+java_class_path (initial): G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\bin;G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAP\bin;G:\Thomas Cook Thesis\CraftPlannerFinal\LGOAPCraft\lib\bwmirror_v2_4.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files/Java/jre1.8.0_77/bin/server;C:/Program Files/Java/jre1.8.0_77/bin;C:/Program Files/Java/jre1.8.0_77/lib/amd64;C:\ProgramData\Oracle\Java\javapath;G:\Sony\usr\local\cell\host-win32\spu\bin;G:\Sony\usr\local\cell\host-win32\ppu\bin;G:\Sony\usr\local\cell\host-win32\bin;G:\Sony\usr\local\cell\host-win32\Cg\bin;C:\Program Files (x86)\SN Systems\Common\VSI\bin;C:\Program Files (x86)\SN Systems\PS3\bin;G:\Sony\usr\local\cell\host-win32\sn\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Program Files (x86)\Microsoft Application Virtualization Client;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0\;c:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;G:\Thomas Cook Thesis\eclipse;
+USERNAME=cmzero1
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 (6.1.7601.23392)
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, rtm, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 16686628k(12179204k free), swap 33371400k(27347072k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.77-b03) for windows-x86 JRE (1.8.0_77-b03), built on Mar 20 2016 22:00:03 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Fri Apr 22 12:51:47 2016
+elapsed time: 63 seconds (0d 0h 1m 3s)
+

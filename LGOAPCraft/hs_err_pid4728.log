@@ -1,0 +1,273 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x5c5f54bb, pid=4728, tid=9428
+#
+# JRE version: Java(TM) SE Runtime Environment (7.0_79-b15) (build 1.7.0_79-b15)
+# Java VM: Java HotSpot(TM) Client VM (24.79-b02 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# V  [jvm.dll+0xc54bb]
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x009cc800):  JavaThread "main" [_thread_in_vm, id=9428, stack(0x00920000,0x00970000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000000
+
+Registers:
+EAX=0x00000000, EBX=0x5c4b0278, ECX=0x00000000, EDX=0x00000001
+ESP=0x0096db0c, EBP=0x0096db28, ESI=0x009cc930, EDI=0x009cc800
+EIP=0x5c5f54bb, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0096db0c)
+0x0096db0c:   00000000 009cc930 5c4b0278 009cc800
+0x0096db1c:   00000000 009cc800 009cc930 0096db78
+0x0096db2c:   5c33c8d5 009cc930 00000000 009c0079
+0x0096db3c:   009cc930 5c4b0278 5c33c8a7 00000001
+0x0096db4c:   0000000f ffff0049 0096db78 5c33c883
+0x0096db5c:   009cc930 00000001 0000000f 009cc800
+0x0096db6c:   34245538 34245538 009cc930 0096dbbc
+0x0096db7c:   0235aabd 009cc930 0096dbdc 06d7a3f4 
+
+Instructions: (pc=0x5c5f54bb)
+0x5c5f549b:   f3 ff 83 c4 08 83 7f 04 00 89 7d f0 c7 45 f4 00
+0x5c5f54ab:   00 00 00 74 08 8d 4d f0 e8 a8 a6 0c 00 8b 45 0c
+0x5c5f54bb:   8b 08 8b 51 04 8b 42 40 50 56 e8 26 df 07 00 83
+0x5c5f54cb:   c4 08 83 7d f4 00 89 45 08 74 08 8d 4d f0 e8 c2 
+
+
+Register to memory mapping:
+
+EAX=0x00000000 is an unknown value
+EBX=0x5c4b0278 is an unknown value
+ECX=0x00000000 is an unknown value
+EDX=0x00000001 is an unknown value
+ESP=0x0096db0c is pointing into the stack for thread: 0x009cc800
+EBP=0x0096db28 is pointing into the stack for thread: 0x009cc800
+ESI=0x009cc930 is an unknown value
+EDI=0x009cc800 is a thread
+
+
+Stack: [0x00920000,0x00970000],  sp=0x0096db0c,  free space=310k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0xc54bb]
+C  [bwapi_bridge2_4.dll+0x7c8d5]
+j  bwapi.Unit.build_native(JLbwapi/UnitType;Lbwapi/TilePosition;)Z+0
+j  bwapi.Unit.build(Lbwapi/UnitType;Lbwapi/TilePosition;)Z+7
+j  Orders.BuildOrder.update()V+108
+J 61 C1 GameModel.Worker.update(LCraftPlanner/CraftPlannerBlackboard;)V (445 bytes) @ 0x023efdac [0x023ef840+0x56c]
+J 69 C1 Actuators.WorkerActuator.update()V (54 bytes) @ 0x023f22b8 [0x023f2210+0xa8]
+J 133 C1 CraftPlanner.CraftPlanner.update()V (88 bytes) @ 0x023ff388 [0x023ff320+0x68]
+J 124 C1 Managers.GameManager.onFrame()V (56 bytes) @ 0x023fe3f8 [0x023fe1d0+0x228]
+J 123 C1 bwapi.AIModule.onFrame()V (17 bytes) @ 0x023fdf84 [0x023fdf50+0x34]
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x14234a]
+V  [jvm.dll+0x206ebe]
+V  [jvm.dll+0x1423cd]
+V  [jvm.dll+0xcb5c2]
+V  [jvm.dll+0xcf213]
+C  [bwapi_bridge2_4.dll+0x40e6d]
+C  [bwapi_bridge2_4.dll+0x699d0]
+j  bwapi.Mirror.startGame()V+0
+j  Managers.GameManager.<init>()V+30
+j  Managers.GameManager.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x14234a]
+V  [jvm.dll+0x206ebe]
+V  [jvm.dll+0x1423cd]
+V  [jvm.dll+0xcb345]
+V  [jvm.dll+0xd5ff7]
+C  [javaw.exe+0x2070]
+C  [javaw.exe+0xa601]
+C  [javaw.exe+0xa68b]
+C  [KERNEL32.DLL+0x138f4]
+C  [ntdll.dll+0x65de3]
+C  [ntdll.dll+0x65dae]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  bwapi.Unit.build_native(JLbwapi/UnitType;Lbwapi/TilePosition;)Z+0
+j  bwapi.Unit.build(Lbwapi/UnitType;Lbwapi/TilePosition;)Z+7
+j  Orders.BuildOrder.update()V+108
+J 61 C1 GameModel.Worker.update(LCraftPlanner/CraftPlannerBlackboard;)V (445 bytes) @ 0x023efdac [0x023ef840+0x56c]
+J 69 C1 Actuators.WorkerActuator.update()V (54 bytes) @ 0x023f22b8 [0x023f2210+0xa8]
+J 133 C1 CraftPlanner.CraftPlanner.update()V (88 bytes) @ 0x023ff388 [0x023ff320+0x68]
+J 124 C1 Managers.GameManager.onFrame()V (56 bytes) @ 0x023fe3f8 [0x023fe1d0+0x228]
+J 123 C1 bwapi.AIModule.onFrame()V (17 bytes) @ 0x023fdf84 [0x023fdf50+0x34]
+v  ~StubRoutines::call_stub
+j  bwapi.Mirror.startGame()V+0
+j  Managers.GameManager.<init>()V+30
+j  Managers.GameManager.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00bbd400 JavaThread "Service Thread" daemon [_thread_blocked, id=6824, stack(0x04620000,0x04670000)]
+  0x00bb4800 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=8288, stack(0x04590000,0x045e0000)]
+  0x00bb3000 JavaThread "Attach Listener" daemon [_thread_blocked, id=6456, stack(0x04500000,0x04550000)]
+  0x00bb1000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4328, stack(0x04470000,0x044c0000)]
+  0x00b44800 JavaThread "Finalizer" daemon [_thread_blocked, id=5424, stack(0x043e0000,0x04430000)]
+  0x00b3f400 JavaThread "Reference Handler" daemon [_thread_blocked, id=6188, stack(0x04350000,0x043a0000)]
+=>0x009cc800 JavaThread "main" [_thread_in_vm, id=9428, stack(0x00920000,0x00970000)]
+
+Other Threads:
+  0x00b3e000 VMThread [stack: 0x02290000,0x022e0000] [id=4248]
+  0x00bc8c00 WatcherThread [stack: 0x046b0000,0x04700000] [id=6904]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 1811K [0x24200000, 0x24750000, 0x29750000)
+  eden space 4416K,  29% used [0x24200000, 0x24345cb8, 0x24650000)
+  from space 512K,  99% used [0x246d0000, 0x2474f1b8, 0x24750000)
+  to   space 512K,   0% used [0x24650000, 0x24650000, 0x246d0000)
+ tenured generation   total 10944K, used 0K [0x29750000, 0x2a200000, 0x34200000)
+   the space 10944K,   0% used [0x29750000, 0x29750000, 0x29750200, 0x2a200000)
+ compacting perm gen  total 12288K, used 711K [0x34200000, 0x34e00000, 0x38200000)
+   the space 12288K,   5% used [0x34200000, 0x342b1fe0, 0x342b2000, 0x34e00000)
+    ro space 10240K,  42% used [0x38200000, 0x38636058, 0x38636200, 0x38c00000)
+    rw space 12288K,  51% used [0x38c00000, 0x3923bdb0, 0x3923be00, 0x39800000)
+
+Card table byte_map: [0x00cc0000,0x00d70000] byte_map_base: 0x00b9f000
+
+Polling page: 0x009d0000
+
+Code Cache  [0x02350000, 0x02418000, 0x04350000)
+ total_blobs=305 nmethods=168 adapters=74 free_code_cache=31982Kb largest_free_block=32750336
+
+Compilation events (10 events):
+Event: 11.116 Thread 0x00bb4800  161             Orders.BuildOrder::canAfford (18 bytes)
+Event: 11.116 Thread 0x00bb4800 nmethod 161 0x02413108 code [0x02413220, 0x02413348]
+Event: 11.390 Thread 0x00bb4800  162             bwapi.Game::mapWidth (9 bytes)
+Event: 11.390 Thread 0x00bb4800 nmethod 162 0x024136c8 code [0x024137c0, 0x0241385c]
+Event: 11.392 Thread 0x00bb4800  164             bwapi.Game::mapHeight (9 bytes)
+Event: 11.392 Thread 0x00bb4800 nmethod 164 0x02413e08 code [0x02413f00, 0x02413f9c]
+Event: 11.392 Thread 0x00bb4800  166             GameModel.Base::canBuildHere (27 bytes)
+Event: 11.392 Thread 0x00bb4800 nmethod 166 0x02414008 code [0x02414120, 0x02414238]
+Event: 11.392 Thread 0x00bb4800  167             bwapi.Game::canBuildHere (12 bytes)
+Event: 11.392 Thread 0x00bb4800 nmethod 167 0x02414308 code [0x02414400, 0x024144ac]
+
+GC Heap History (2 events):
+Event: 10.852 GC heap before
+{Heap before GC invocations=0 (full 0):
+ def new generation   total 4928K, used 4416K [0x24200000, 0x24750000, 0x29750000)
+  eden space 4416K, 100% used [0x24200000, 0x24650000, 0x24650000)
+  from space 512K,   0% used [0x24650000, 0x24650000, 0x246d0000)
+  to   space 512K,   0% used [0x246d0000, 0x246d0000, 0x24750000)
+ tenured generation   total 10944K, used 0K [0x29750000, 0x2a200000, 0x34200000)
+   the space 10944K,   0% used [0x29750000, 0x29750000, 0x29750200, 0x2a200000)
+ compacting perm gen  total 12288K, used 711K [0x34200000, 0x34e00000, 0x38200000)
+   the space 12288K,   5% used [0x34200000, 0x342b1fb0, 0x342b2000, 0x34e00000)
+    ro space 10240K,  42% used [0x38200000, 0x38636058, 0x38636200, 0x38c00000)
+    rw space 12288K,  51% used [0x38c00000, 0x3923bdb0, 0x3923be00, 0x39800000)
+Event: 10.854 GC heap after
+Heap after GC invocations=1 (full 0):
+ def new generation   total 4928K, used 508K [0x24200000, 0x24750000, 0x29750000)
+  eden space 4416K,   0% used [0x24200000, 0x24200000, 0x24650000)
+  from space 512K,  99% used [0x246d0000, 0x2474f1b8, 0x24750000)
+  to   space 512K,   0% used [0x24650000, 0x24650000, 0x246d0000)
+ tenured generation   total 10944K, used 0K [0x29750000, 0x2a200000, 0x34200000)
+   the space 10944K,   0% used [0x29750000, 0x29750000, 0x29750200, 0x2a200000)
+ compacting perm gen  total 12288K, used 711K [0x34200000, 0x34e00000, 0x38200000)
+   the space 12288K,   5% used [0x34200000, 0x342b1fb0, 0x342b2000, 0x34e00000)
+    ro space 10240K,  42% used [0x38200000, 0x38636058, 0x38636200, 0x38c00000)
+    rw space 12288K,  51% used [0x38c00000, 0x3923bdb0, 0x3923be00, 0x39800000)
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 10.806 Thread 0x009cc800 Threw 0x24638e30 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.807 Thread 0x009cc800 Threw 0x24639280 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.808 Thread 0x009cc800 Threw 0x246396d0 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.809 Thread 0x009cc800 Threw 0x24639b20 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.810 Thread 0x009cc800 Threw 0x24639f70 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.811 Thread 0x009cc800 Threw 0x2463a3c0 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.812 Thread 0x009cc800 Threw 0x2463a810 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.812 Thread 0x009cc800 Threw 0x2463ac60 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.813 Thread 0x009cc800 Threw 0x2463b0b0 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+Event: 10.814 Thread 0x009cc800 Threw 0x2463b500 at C:\re\jdk7u79\2331\hotspot\src\share\vm\interpreter\linkResolver.cpp:892
+
+Events (10 events):
+Event: 10.855 Executing VM operation: RevokeBias
+Event: 10.855 Executing VM operation: RevokeBias done
+Event: 10.855 Executing VM operation: RevokeBias
+Event: 10.855 Executing VM operation: RevokeBias done
+Event: 10.855 Executing VM operation: BulkRevokeBias
+Event: 10.855 Executing VM operation: BulkRevokeBias done
+Event: 10.855 Executing VM operation: RevokeBias
+Event: 10.855 Executing VM operation: RevokeBias done
+Event: 10.855 Executing VM operation: BulkRevokeBias
+Event: 10.855 Executing VM operation: BulkRevokeBias done
+
+
+Dynamic libraries:
+0x00d90000 - 0x00dbf000 	C:\Program Files (x86)\Java\jre7\bin\javaw.exe
+0x77ac0000 - 0x77c3b000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x77670000 - 0x77750000 	C:\WINDOWS\SYSTEM32\KERNEL32.DLL
+0x76250000 - 0x763ce000 	C:\WINDOWS\SYSTEM32\KERNELBASE.dll
+0x748e0000 - 0x7495b000 	C:\WINDOWS\SYSTEM32\ADVAPI32.dll
+0x774f0000 - 0x775ae000 	C:\WINDOWS\SYSTEM32\msvcrt.dll
+0x75ff0000 - 0x76034000 	C:\WINDOWS\SYSTEM32\sechost.dll
+0x765e0000 - 0x7668d000 	C:\WINDOWS\SYSTEM32\RPCRT4.dll
+0x747d0000 - 0x747ee000 	C:\WINDOWS\SYSTEM32\SspiCli.dll
+0x747c0000 - 0x747ca000 	C:\WINDOWS\SYSTEM32\CRYPTBASE.dll
+0x76d60000 - 0x76db8000 	C:\WINDOWS\SYSTEM32\bcryptPrimitives.dll
+0x77750000 - 0x77897000 	C:\WINDOWS\SYSTEM32\USER32.dll
+0x766b0000 - 0x767ff000 	C:\WINDOWS\SYSTEM32\GDI32.dll
+0x73870000 - 0x73a7f000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.10586.0_none_d3c2e4e965da4528\COMCTL32.dll
+0x778a0000 - 0x77a5d000 	C:\WINDOWS\SYSTEM32\combase.dll
+0x74b70000 - 0x74b9b000 	C:\WINDOWS\SYSTEM32\IMM32.DLL
+0x62eb0000 - 0x62f6f000 	C:\Program Files (x86)\Java\jre7\bin\msvcr100.dll
+0x5c530000 - 0x5c8b9000 	C:\Program Files (x86)\Java\jre7\bin\client\jvm.dll
+0x74960000 - 0x74966000 	C:\WINDOWS\SYSTEM32\PSAPI.DLL
+0x73fe0000 - 0x73fe8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x733a0000 - 0x733c4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x77260000 - 0x772bf000 	C:\WINDOWS\SYSTEM32\WS2_32.dll
+0x72ad0000 - 0x72af3000 	C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+0x77200000 - 0x77237000 	C:\WINDOWS\SYSTEM32\cfgmgr32.dll
+0x6a4a0000 - 0x6a4ac000 	C:\Program Files (x86)\Java\jre7\bin\verify.dll
+0x6a480000 - 0x6a4a0000 	C:\Program Files (x86)\Java\jre7\bin\java.dll
+0x63870000 - 0x63883000 	C:\Program Files (x86)\Java\jre7\bin\zip.dll
+0x5c2c0000 - 0x5c529000 	C:\Users\ShottyMonsta\Desktop\CraftPlannerFinal\LGOAPCraft\bwapi_bridge2_4.dll
+0x63730000 - 0x637a1000 	C:\WINDOWS\SYSTEM32\MSVCP120.dll
+0x62dc0000 - 0x62eae000 	C:\WINDOWS\SYSTEM32\MSVCR120.dll
+0x6acc0000 - 0x6ad27000 	C:\Users\ShottyMonsta\Desktop\CraftPlannerFinal\LGOAPCraft\libgmp-10.dll
+0x6f540000 - 0x6f59e000 	C:\Users\ShottyMonsta\Desktop\CraftPlannerFinal\LGOAPCraft\libmpfr-4.dll
+0x69bd0000 - 0x69d0f000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: Managers.GameManager
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files (x86)/Java/jre7/bin/client;C:/Program Files (x86)/Java/jre7/bin;C:/Program Files (x86)/Java/jre7/lib/i386;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32\wbem;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Common Files\Autodesk Shared;C:\Program Files\Microsoft SQL Server\110\Tools\Binn;C:\Program Files (x86)\Java\jdk1.7.0_40\bin;C:\Program Files (x86)\nodejs\\bin;C:\Users\ShottyMonsta\AppData\Local\Smartbar\Application;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Autodesk\Backburner;C:\Program Files (x86)\Skype\Phone;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit;C:\Program Files\doxygen\bin;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Users\ShottyMonsta\eclipse\java-mars\eclipse;
+USERNAME=ShottyMonsta
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 
+
+CPU:total 8 (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 16720292k(13008384k free), swap 33497508k(29089700k free)
+
+vm_info: Java HotSpot(TM) Client VM (24.79-b02) for windows-x86 JRE (1.7.0_79-b15), built on Apr 10 2015 16:49:13 by "java_re" with unknown MS VC++:1600
+
+time: Fri Apr 22 19:06:01 2016
+elapsed time: 11 seconds
+
